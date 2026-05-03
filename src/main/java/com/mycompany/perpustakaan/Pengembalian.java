@@ -273,8 +273,6 @@ public class Pengembalian extends javax.swing.JFrame {
         
         java.sql.ResultSet rs1 = pst.executeQuery();
         boolean adaData = false;
-        
-        // 3. Masukkan setiap nomor peminjaman yang ditemukan ke dalam ComboBox
         while (rs1.next()) {
             adaData = true;
             cTransaksi.addItem(rs1.getString("no_transaksi"));
@@ -303,7 +301,7 @@ public class Pengembalian extends javax.swing.JFrame {
     javax.swing.table.DefaultTableModel model = new javax.swing.table.DefaultTableModel();
     model.addColumn("No Transaksi");
     model.addColumn("Nama");
-    model.addColumn("Buku"); // Menampilkan Judul Buku
+    model.addColumn("Buku"); 
     model.addColumn("Tanggal Pinjam");
     model.addColumn("Tanggal Kembali");
 
@@ -320,8 +318,6 @@ public class Pengembalian extends javax.swing.JFrame {
         pstkembali.setString(1, noTransaksi);
         
         java.sql.ResultSet rs = pstkembali.executeQuery();
-
-        // 5. Masukkan data ke dalam baris tabel
         if (rs.next()) {
             model.addRow(new Object[]{
                 rs.getString("no_transaksi"),
@@ -331,13 +327,9 @@ public class Pengembalian extends javax.swing.JFrame {
                 rs.getString("tgl_kembali")
             });
             
-            // 6. Otomatis mengisi textfield Tanggal Tenggat
-            // Pastikan variabel textfield tanggal tenggat Anda bernama tTenggat
             tglTenggat.setText(rs.getString("tgl_kembali")); 
         }
 
-        // 7. Terapkan model ke JTable di form Anda
-        // Ganti 'tblPengembalian' dengan nama variabel JTable Anda yang sebenarnya
         tblPinjam.setModel(model);
 
     } catch (Exception e) {
