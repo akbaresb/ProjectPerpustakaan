@@ -41,6 +41,7 @@ public class Main_Menu extends javax.swing.JFrame {
         Memberbtn.addActionListener(this::MemberbtnActionPerformed);
 
         Rentbtn.setText("Peminjaman");
+        Rentbtn.addActionListener(this::RentbtnActionPerformed);
 
         Returnbtn.setText("Pengembalian");
         Returnbtn.addActionListener(this::ReturnbtnActionPerformed);
@@ -124,6 +125,13 @@ Member formMember = new Member();
     formPetugas.setLocationRelativeTo(null);
     this.dispose();      
     }//GEN-LAST:event_EmployeebtnActionPerformed
+
+    private void RentbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RentbtnActionPerformed
+    Peminjaman formPeminjaman = new Peminjaman();
+    formPeminjaman.setVisible(true);
+    formPeminjaman.setLocationRelativeTo(null);
+    this.dispose();         // TODO add your handling code here:
+    }//GEN-LAST:event_RentbtnActionPerformed
 
     /**
      * @param args the command line arguments
