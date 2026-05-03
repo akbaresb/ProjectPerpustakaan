@@ -11,6 +11,67 @@ package com.mycompany.perpustakaan;
 public class Peminjaman extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Peminjaman.class.getName());
+    
+    private void kosongkanForm() {
+    tIdBuku.setText("");
+    tNoPinjam.setText("");
+    tIdAnggota.setText("");
+    tNama.setText("");
+   
+}
+    
+    private void tampilData(String keyword) {
+    
+    javax.swing.table.DefaultTableModel model = new javax.swing.table.DefaultTableModel();
+    model.addColumn("ID Buku");
+    model.addColumn("Judul");
+    model.addColumn("Penulis");
+    model.addColumn("Penerbit");
+    model.addColumn("Tahun");
+    model.addColumn("Stok");
+
+    try {
+        String sql;
+        java.sql.Connection conn = (java.sql.Connection) Koneksi.configDB();
+        java.sql.PreparedStatement pst;
+        if (keyword.isEmpty()) {
+            sql = "SELECT * FROM buku";
+            pst = conn.prepareStatement(sql);
+        } else {
+           
+            String pilihan = cCari.getSelectedItem().toString();
+            String kolomDB = "id_buku"; 
+            
+            if (pilihan.equals("Judul Buku")) {
+                kolomDB = "judul";
+            }
+            sql = "SELECT * FROM buku WHERE " + kolomDB + " LIKE ?";
+            pst = conn.prepareStatement(sql);
+            pst.setString(1, "%" + keyword + "%");
+        }
+
+        java.sql.ResultSet rs = pst.executeQuery();
+
+        // 3. Memasukkan data dari database ke baris tabel Java
+        while (rs.next()) {
+            model.addRow(new Object[]{
+                rs.getString("id_buku"),
+                rs.getString("judul"),
+                rs.getString("penulis"),
+                rs.getString("penerbit"), 
+                rs.getString("tahun_terbit"),
+                rs.getString("stok")
+            });
+        }
+        
+        
+        tblBuku.setModel(model);
+
+    } catch (Exception e) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Gagal memuat data tabel: " + e.getMessage());
+    }
+}
+    
     private void generateNoTransaksi() {
     // 1. Ambil waktu saat ini sebagai basis unik (Format: TahunBulanTanggalJamMenitDetik)
     java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyMMddHHmmss");
@@ -41,6 +102,7 @@ public class Peminjaman extends javax.swing.JFrame {
     public Peminjaman() {
         initComponents();
         generateNoTransaksi();
+        tampilData("");
     }
 
     /**
@@ -52,12 +114,11 @@ public class Peminjaman extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        popupMenu1 = new java.awt.PopupMenu();
         tNoPinjam = new javax.swing.JTextField();
         tIdAnggota = new javax.swing.JTextField();
         tNama = new javax.swing.JTextField();
         tIdBuku = new javax.swing.JTextField();
-        tglPinjam = new javax.swing.JFormattedTextField();
-        tglKembali = new javax.swing.JFormattedTextField();
         tJudul = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -69,18 +130,40 @@ public class Peminjaman extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        textField1 = new java.awt.TextField();
-        textField2 = new java.awt.TextField();
+        tglPinjam = new com.toedter.calendar.JDateChooser();
+        tglKembali = new com.toedter.calendar.JDateChooser();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblBuku = new javax.swing.JTable();
+        cCari = new javax.swing.JComboBox<>();
+
+        popupMenu1.setLabel("popupMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         tNoPinjam.addActionListener(this::tNoPinjamActionPerformed);
 
+        tIdAnggota.addActionListener(this::tIdAnggotaActionPerformed);
+        tIdAnggota.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tIdAnggotaKeyPressed(evt);
+            }
+        });
+
+        tNama.setEditable(false);
         tNama.addActionListener(this::tNamaActionPerformed);
+
+        tIdBuku.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tIdBukuKeyPressed(evt);
+            }
+        });
+
+        tJudul.setEditable(false);
+        tJudul.addActionListener(this::tJudulActionPerformed);
 
         jLabel1.setText("No Transaksi");
 
-        jLabel2.setText("ID Pelanggan ");
+        jLabel2.setText("ID Anggota");
 
         jLabel3.setText("Nama Anggota");
 
@@ -93,15 +176,32 @@ public class Peminjaman extends javax.swing.JFrame {
         jLabel7.setText("Tanggal Kembali");
 
         jButton1.setText("Cari");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
 
         jButton2.setText("Batal");
 
         jButton3.setText("Pinjam");
         jButton3.addActionListener(this::jButton3ActionPerformed);
 
-        textField1.setText("textField1");
+        tblBuku.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID Buku", "Judul", "Penulis", "Penerbit", "Tahun", "Stok"
+            }
+        ));
+        tblBuku.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                tblBukuMousePressed(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tblBuku);
 
-        textField2.setText("textField2");
+        cCari.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Judul Buku", "ID Buku" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -115,87 +215,88 @@ public class Peminjaman extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
-                            .addComponent(jLabel4)
+                            .addComponent(jLabel4))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(tNama, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 213, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(cCari, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(tIdAnggota, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
+                                    .addComponent(tNoPinjam, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
+                                    .addComponent(tIdBuku, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton3)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(156, 156, 156)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel5)
                             .addComponent(jLabel6)
                             .addComponent(jLabel7))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tglKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tJudul, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tglPinjam, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(tIdBuku, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton2))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(tNoPinjam, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(147, 147, 147)
-                                    .addComponent(jButton1))
-                                .addComponent(tNama, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(tIdAnggota, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton3)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(320, 320, 320)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(textField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(185, Short.MAX_VALUE))
+                                .addComponent(tglPinjam, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tJudul, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(tglKembali, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(50, 50, 50)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel1)
+                                    .addComponent(tNoPinjam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(60, 60, 60)
+                                .addComponent(jButton1)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(tIdAnggota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addComponent(jButton3)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tNoPinjam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)))
+                            .addComponent(tNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(jButton1)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tIdAnggota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jButton3)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+                        .addGap(182, 182, 182)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tIdBuku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(jButton2)))
-                .addGap(57, 57, 57)
+                            .addComponent(jLabel4)
+                            .addComponent(jButton2))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addComponent(cCari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tJudul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tglPinjam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addComponent(tglPinjam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tglKembali, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addGap(50, 50, 50)
-                .addComponent(textField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
-                .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(95, 95, 95))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel7)
+                    .addComponent(tglKembali, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(141, 141, 141))
         );
 
         pack();
@@ -210,10 +311,91 @@ public class Peminjaman extends javax.swing.JFrame {
     }//GEN-LAST:event_tNamaActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-    
-    
-    generateNoTransaksi();        // TODO add your handling code here:
+        try {
+        java.sql.Connection conn = (java.sql.Connection) Koneksi.configDB();
+        String sqlInsert = "INSERT INTO peminjaman (no_transaksi, id_member, id_buku, tgl_pinjam, tgl_kembali, status) VALUES (?, ?, ?, ?, ?, ?)";
+        java.sql.PreparedStatement pstInsert = conn.prepareStatement(sqlInsert);
+        pstInsert.setString(1, tNoPinjam.getText());
+        pstInsert.setString(2, tIdAnggota.getText());
+        pstInsert.setString(3, tIdBuku.getText());
+        
+        java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd");
+        pstInsert.setString(4, sdf.format(tglPinjam.getDate()));
+        pstInsert.setString(5, sdf.format(tglKembali.getDate()));
+        pstInsert.setString(6, "Pinjam"); // Status default
+        
+        pstInsert.execute(); 
+        javax.swing.JOptionPane.showMessageDialog(null, "Peminjaman Berhasil!");
+
+    } catch (Exception e) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Terjadi Kesalahan: " + e.getMessage());
+    }
+    kosongkanForm();
+    generateNoTransaksi();  
+    // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void tIdBukuKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tIdBukuKeyPressed
+                                    
+    
+    String keyword = tIdBuku.getText();
+    tampilData(keyword);
+
+    }//GEN-LAST:event_tIdBukuKeyPressed
+
+    private void tJudulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tJudulActionPerformed
+     String keyword = tJudul.getText();
+    tampilData(keyword);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tJudulActionPerformed
+
+    private void tblBukuMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblBukuMousePressed
+     if (evt.getClickCount() == 2) {
+        int baris = tblBuku.getSelectedRow();
+        String id = tblBuku.getValueAt(baris, 0).toString();
+        String judul = tblBuku.getValueAt(baris, 1).toString();
+        
+        tIdBuku.setText(id);
+        tJudul.setText(judul);
+    }          // TODO add your handling code here:
+    }//GEN-LAST:event_tblBukuMousePressed
+
+    private void tIdAnggotaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tIdAnggotaKeyPressed
+          // TODO add your handling code here:
+    }//GEN-LAST:event_tIdAnggotaKeyPressed
+
+    private void tIdAnggotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tIdAnggotaActionPerformed
+     try {
+        String idDicari = tIdAnggota.getText();
+        java.sql.Connection conn = (java.sql.Connection) Koneksi.configDB();
+        String sql = "SELECT * FROM anggota WHERE id_member = ?";
+        java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+        pst.setString(1, idDicari);
+        
+        java.sql.ResultSet rs = pst.executeQuery();
+        
+        // 3. Cek apakah data ditemukan
+        if (rs.next()) {
+            // Jika ketemu, ambil kolom 'nama_anggota' dan tampilkan di textfield Nama
+            tNama.setText(rs.getString("nama"));
+            
+            // (Opsional) Langsung pindahkan kursor ke kotak ID Buku untuk mempercepat ketikan
+            tIdBuku.requestFocus(); 
+        } else {
+            // Jika ID tidak ada di database
+            javax.swing.JOptionPane.showMessageDialog(this, "Data Anggota tidak ditemukan!");
+            tNama.setText(""); // Kosongkan kembali nama
+            tIdAnggota.requestFocus(); // Kembalikan kursor ke ID Anggota
+        }
+        
+    } catch (Exception e) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Terjadi Kesalahan: " + e.getMessage());
+    }         // TODO add your handling code here:
+    }//GEN-LAST:event_tIdAnggotaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -241,6 +423,7 @@ public class Peminjaman extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cCari;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -251,14 +434,15 @@ public class Peminjaman extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JScrollPane jScrollPane1;
+    private java.awt.PopupMenu popupMenu1;
     private javax.swing.JTextField tIdAnggota;
     private javax.swing.JTextField tIdBuku;
     private javax.swing.JTextField tJudul;
     private javax.swing.JTextField tNama;
     private javax.swing.JTextField tNoPinjam;
-    private java.awt.TextField textField1;
-    private java.awt.TextField textField2;
-    private javax.swing.JFormattedTextField tglKembali;
-    private javax.swing.JFormattedTextField tglPinjam;
+    private javax.swing.JTable tblBuku;
+    private com.toedter.calendar.JDateChooser tglKembali;
+    private com.toedter.calendar.JDateChooser tglPinjam;
     // End of variables declaration//GEN-END:variables
 }

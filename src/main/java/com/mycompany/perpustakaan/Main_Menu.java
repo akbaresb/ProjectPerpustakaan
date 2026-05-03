@@ -106,7 +106,10 @@ Member formMember = new Member();
     }//GEN-LAST:event_MemberbtnActionPerformed
 
     private void ReturnbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnbtnActionPerformed
-        
+    Pengembalian formPengembalian = new Pengembalian();
+    formPengembalian.setVisible(true);
+    formPengembalian.setLocationRelativeTo(null);
+    this.dispose(); 
     }//GEN-LAST:event_ReturnbtnActionPerformed
 
     private void BukubtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BukubtnActionPerformed
