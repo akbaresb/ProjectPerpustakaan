@@ -19,10 +19,9 @@ public class Koneksi {
             String url = "jdbc:mysql://localhost:3306/Perpustakaan"; 
             String user = "mamatgunshop"; 
             String pass = "Mamatgunshop123!";     
-            // Registrasi Driver
+           
             DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
             
-            // Membuat koneksi
             mysqlconfig = DriverManager.getConnection(url, user, pass);            
             
         } catch (Exception e) {

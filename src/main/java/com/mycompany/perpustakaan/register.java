@@ -184,7 +184,9 @@ public class register extends javax.swing.JFrame {
     String email = txtemail.getText();
     String telepon = txttelepon.getText();
     String alamat = txtalamat.getText();
-    
+   
+   
+           
     String passInput = new String(txtpassword.getPassword());
     String passInput1 = new String(confirmpass.getPassword());
     String encryptedPass1 = encryptPassword(passInput);
@@ -195,12 +197,24 @@ public class register extends javax.swing.JFrame {
     } else if (!encryptedPass1.equals(encryptedPass2)) {
         javax.swing.JOptionPane.showMessageDialog(null, "Password Tidak Sesuai!", "Peringatan", javax.swing.JOptionPane.WARNING_MESSAGE);
     } else {
-    
     try {
+        java.sql.Connection conn = (java.sql.Connection) Koneksi.configDB();
+        String sqlCheck = "SELECT id_member FROM anggota WHERE id_member = ?";
+        java.sql.PreparedStatement psCheck = conn.prepareStatement(sqlCheck);
+        psCheck.setString(1, idanggota);
+        java.sql.ResultSet rs = psCheck.executeQuery();
+
+        if (rs.next()) {
+            
+            javax.swing.JOptionPane.showMessageDialog(this, "ID Member sudah digunakan, silakan gunakan ID lain!");
+            txtid.setText("");
+            txtid.requestFocus();
+        } else {
+          
+          
         String passTerinkripsi = encryptPassword(new String(txtpassword.getPassword()));
         String sql = "INSERT INTO anggota VALUES (?, ?, ?, ?, ?,?)";
         
-        java.sql.Connection conn = (java.sql.Connection) Koneksi.configDB();
         java.sql.PreparedStatement pst = conn.prepareStatement(sql);
         
         pst.setString(1, txtid.getText());
@@ -212,13 +226,15 @@ public class register extends javax.swing.JFrame {
         
         
         pst.execute();
-        javax.swing.JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan");
-        
-         kosongkanForm();
-    
-    } catch (Exception e) {
-        javax.swing.JOptionPane.showMessageDialog(this, e.getMessage());
-    }      }  
+        javax.swing.JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan"); 
+            
+        }
+
+    }  catch (Exception e) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Error Database: " + e.getMessage());
+    }
+    }
+      
                 // TODO add your handling code here:
     }//GEN-LAST:event_SubmitBtnActionPerformed
 

@@ -50,9 +50,7 @@ private void kosongkanForm() {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Buku.class.getName());
 
-    /**
-     * Creates new form Buku
-     */
+ 
     public Buku() {
         initComponents();
     }
@@ -247,7 +245,7 @@ private void kosongkanForm() {
         
         pst.execute();
         javax.swing.JOptionPane.showMessageDialog(null, "Penyimpanan Data Buku Berhasil");
-        tampilData(); // Memanggil method refresh tabel
+        tampilData(); 
         kosongkanForm();
     } catch (Exception e) {
         javax.swing.JOptionPane.showMessageDialog(this, e.getMessage());
@@ -334,8 +332,6 @@ private void kosongkanForm() {
        
         int baris = tabelBuku.getSelectedRow();
         
-        // 2. Ambil data dari tabel berdasarkan kolom (index 0-5)
-        // Sesuaikan urutan kolom dengan method tampilData() kamu
         String id = tabelBuku.getValueAt(baris, 0).toString();
         String judul = tabelBuku.getValueAt(baris, 1).toString();
         String penulis = tabelBuku.getValueAt(baris, 2).toString();
@@ -343,7 +339,6 @@ private void kosongkanForm() {
         String tahun = tabelBuku.getValueAt(baris, 4).toString();
         String stok = tabelBuku.getValueAt(baris, 5).toString();
         
-        // 3. Masukkan data ke dalam masing-masing TextField
         txtId.setText(id);
         txtJudul.setText(judul);
         txtPenulis.setText(penulis);
@@ -351,7 +346,6 @@ private void kosongkanForm() {
         txtTahun.setText(tahun);
         txtStok.setText(stok);
         
-        // 4. (Opsional) Nonaktifkan field ID jika id_buku tidak boleh diubah (Primary Key)
         txtId.setEditable(false);
     } // TODO add your handling code here:
     }//GEN-LAST:event_DOUBLE

@@ -18,6 +18,7 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+         this.setLocationRelativeTo(null);
     }
   
 private String encryptPassword(String password) {
@@ -171,7 +172,7 @@ private String encryptPassword(String password) {
         return null;
     }
     private void DaftarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DaftarBtnActionPerformed
-    new register().setVisible(true); // Pindah ke frame petugas
+    new register().setVisible(true);
     this.dispose();
     
     }//GEN-LAST:event_DaftarBtnActionPerformed
@@ -185,7 +186,7 @@ private String encryptPassword(String password) {
     }//GEN-LAST:event_enter
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+      masuk();      // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**

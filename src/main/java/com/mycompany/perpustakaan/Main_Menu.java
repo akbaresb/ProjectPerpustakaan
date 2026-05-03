@@ -110,17 +110,9 @@ Member formMember = new Member();
 
     private void BukubtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BukubtnActionPerformed
         
-                                           
-    
     Buku formBuku = new Buku();
-    
-    
     formBuku.setVisible(true);
-    
-   
     formBuku.setLocationRelativeTo(null);
-    
-    
     this.dispose(); 
 
     }//GEN-LAST:event_BukubtnActionPerformed
@@ -128,13 +120,8 @@ Member formMember = new Member();
     private void EmployeebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmployeebtnActionPerformed
 
     Petugas formPetugas = new Petugas();
-    
-
     formPetugas.setVisible(true);
-
     formPetugas.setLocationRelativeTo(null);
-    
-   
     this.dispose();      
     }//GEN-LAST:event_EmployeebtnActionPerformed
 

@@ -30,7 +30,7 @@ public class Petugas extends javax.swing.JFrame {
     }
 }
     private void tampilData() {
-    // Membuat header tabel
+    
     DefaultTableModel model = new DefaultTableModel();
     model.addColumn("ID Petugas");
     model.addColumn("Nama");
@@ -38,7 +38,6 @@ public class Petugas extends javax.swing.JFrame {
     model.addColumn("Email");
 
     try {
-        // Query untuk mengambil data (Password tidak ditampilkan demi keamanan)
         String sql = "SELECT id_petugas, nama, jabatan, email FROM petugas";
         
         Connection conn = (Connection) Koneksi.configDB();
@@ -54,7 +53,6 @@ public class Petugas extends javax.swing.JFrame {
             });
         }
         
-        // Mengatur model ke JTable
         tabelPetugas.setModel(model);
         
     } catch (Exception e) {
@@ -64,14 +62,12 @@ public class Petugas extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Petugas.class.getName());
 
-    /**
-     * Creates new form Buku
-     */
+    
     public Petugas() {
        
     initComponents();
-    this.setLocationRelativeTo(null); // Form di tengah layar
-    tampilData(); // Panggil fungsi ini
+    this.setLocationRelativeTo(null);
+    tampilData();
     }
 
     /**
@@ -242,8 +238,8 @@ public class Petugas extends javax.swing.JFrame {
         
         pst.execute();
         javax.swing.JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan");
-        tampilData(); // Refresh Tabel
-        kosongkanForm(); // Bersihkan field
+        tampilData(); 
+        kosongkanForm(); 
     } catch (Exception e) {
         javax.swing.JOptionPane.showMessageDialog(this, e.getMessage());
     }   }     
@@ -295,26 +291,18 @@ public class Petugas extends javax.swing.JFrame {
 
     private void doubleClick(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_doubleClick
     if (evt.getClickCount() == 2) {
-        // 1. Dapatkan index baris yang dipilih
         int baris = tabelPetugas.getSelectedRow();
-        
-        // 2. Ambil data dari tabel berdasarkan kolom (index mulai dari 0)
         String id = tabelPetugas.getValueAt(baris, 0).toString();
         String Nama = tabelPetugas.getValueAt(baris, 1).toString();
         String Jabatan = tabelPetugas.getValueAt(baris, 2).toString();
         String Email = tabelPetugas.getValueAt(baris, 3).toString();
-        
-        // 3. Set data ke TextField masing-masing
         idPetugas.setText(id);
         nama.setText(Nama);
         jabatan.setText(Jabatan);
         email.setText(Email);
         
-        // 4. Fokuskan ke password karena password biasanya tidak ditampilkan di tabel
         password.setText("");
         password.requestFocus();
-        
-        // Opsional: Berikan info bahwa data siap diedit
         System.out.println("Data " + id + " siap diupdate.");
     }        // TODO add your handling code here:
     }//GEN-LAST:event_doubleClick
