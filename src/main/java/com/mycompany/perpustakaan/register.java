@@ -49,6 +49,7 @@ public class register extends javax.swing.JFrame {
      * Creates new form Buku
      */
     public register() {
+        this.setLocationRelativeTo(null);
         initComponents();
        
     }
@@ -122,16 +123,17 @@ public class register extends javax.swing.JFrame {
                     .addComponent(jLabel7))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(SubmitBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(confirmpass)
-                        .addComponent(txtpassword, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txtid, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
-                        .addComponent(txtnama, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
-                        .addComponent(txtemail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txttelepon, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
-                        .addComponent(closeBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(confirmpass, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtpassword)
+                    .addComponent(txtid, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
+                    .addComponent(txtnama, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
+                    .addComponent(txtemail, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2)
+                    .addComponent(txttelepon, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(SubmitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(closeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(175, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -168,10 +170,10 @@ public class register extends javax.swing.JFrame {
                     .addComponent(confirmpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addGap(18, 18, 18)
-                .addComponent(SubmitBtn)
-                .addGap(8, 8, 8)
-                .addComponent(closeBtn)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SubmitBtn)
+                    .addComponent(closeBtn))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
 
         pack();
@@ -227,7 +229,10 @@ public class register extends javax.swing.JFrame {
         
         pst.execute();
         javax.swing.JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan"); 
-            
+        this.dispose();
+        Login login = new Login();
+        login.setVisible(true);
+        login.setLocationRelativeTo(null);
         }
 
     }  catch (Exception e) {

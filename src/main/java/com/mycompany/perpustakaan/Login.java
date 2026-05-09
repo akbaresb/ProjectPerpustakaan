@@ -17,8 +17,9 @@ public class Login extends javax.swing.JFrame {
      * Creates new form Login
      */
     public Login() {
+        this.setLocationRelativeTo(null);
         initComponents();
-         this.setLocationRelativeTo(null);
+        
     }
   
 private String encryptPassword(String password) {
@@ -62,6 +63,7 @@ private String encryptPassword(String password) {
         DaftarBtn.addActionListener(this::DaftarBtnActionPerformed);
 
         jButton3.setText("Close");
+        jButton3.addActionListener(this::jButton3ActionPerformed);
 
         password.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -145,9 +147,18 @@ private String encryptPassword(String password) {
         java.sql.ResultSet rsPetugas = pst.executeQuery();
         
     if (rsPetugas.next()) {
-                javax.swing.JOptionPane.showMessageDialog(null, "Login Berhasil sebagai Petugas!");
-                new Main_Menu().setVisible(true);
-                this.dispose();
+                String levelAkses = rsPetugas.getString("jabatan");
+                
+                if (levelAkses.equalsIgnoreCase("inventaris") || 
+                    levelAkses.equalsIgnoreCase("resepsionis") || 
+                    levelAkses.equalsIgnoreCase("admin")) {
+                     javax.swing.JOptionPane.showMessageDialog(null, "Login Berhasil! Anda login sebagai: " + levelAkses);
+                     userSession.setRole(levelAkses);
+                     new Main_Menu().setVisible(true);
+                     this.dispose(); 
+        
+                }
+                
             } else {
                
                 String sqlAnggota = "SELECT * FROM anggota WHERE id_member=? AND password=?";
@@ -158,7 +169,8 @@ private String encryptPassword(String password) {
 
                 if (rsAnggota.next()) {
                     javax.swing.JOptionPane.showMessageDialog(null, "Login Berhasil sebagai Anggota!");
-                    new Menuds().setVisible(true); 
+                    userSession.setRole("member");
+                    new Main_Menu().setVisible(true); 
                     this.dispose();
                 } else {
                     // 
@@ -188,6 +200,10 @@ private String encryptPassword(String password) {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
       masuk();      // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+       this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments

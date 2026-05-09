@@ -36,7 +36,6 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="SubmitBtn" pref="401" max="32767" attributes="0"/>
                   <Component id="confirmpass" alignment="1" max="32767" attributes="0"/>
                   <Component id="txtpassword" alignment="0" max="32767" attributes="0"/>
                   <Component id="txtid" alignment="0" pref="401" max="32767" attributes="0"/>
@@ -44,7 +43,11 @@
                   <Component id="txtemail" alignment="0" pref="401" max="32767" attributes="0"/>
                   <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
                   <Component id="txttelepon" alignment="0" pref="401" max="32767" attributes="0"/>
-                  <Component id="closeBtn" alignment="1" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="SubmitBtn" min="-2" pref="179" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="closeBtn" min="-2" pref="186" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace pref="175" max="32767" attributes="0"/>
           </Group>
@@ -92,10 +95,11 @@
                   <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="SubmitBtn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-              <Component id="closeBtn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="48" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="SubmitBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="closeBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="80" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

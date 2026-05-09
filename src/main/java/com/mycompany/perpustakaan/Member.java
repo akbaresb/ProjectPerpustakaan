@@ -81,6 +81,7 @@ public class Member extends javax.swing.JFrame {
      * Creates new form Buku
      */
     public Member() {
+        this.setLocationRelativeTo(null);
         initComponents();
         tampilData();
     }

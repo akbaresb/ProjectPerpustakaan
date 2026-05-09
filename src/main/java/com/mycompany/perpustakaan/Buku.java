@@ -53,6 +53,7 @@ private void kosongkanForm() {
  
     public Buku() {
         initComponents();
+        tampilData();
     }
 
     /**
@@ -346,7 +347,7 @@ private void kosongkanForm() {
         txtTahun.setText(tahun);
         txtStok.setText(stok);
         
-        txtId.setEditable(false);
+        
     } // TODO add your handling code here:
     }//GEN-LAST:event_DOUBLE
 

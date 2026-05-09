@@ -26,18 +26,18 @@
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="Returnbtn" max="32767" attributes="0"/>
-                  <Component id="Bukubtn" min="-2" pref="200" max="-2" attributes="0"/>
+                  <Component id="btnPengembalian" max="32767" attributes="0"/>
+                  <Component id="btnBuku" min="-2" pref="200" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="Employeebtn" max="32767" attributes="0"/>
-                  <Component id="Rentbtn" pref="123" max="32767" attributes="0"/>
+                  <Component id="btnPetugas" max="32767" attributes="0"/>
+                  <Component id="btnPeminjaman" pref="123" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="Memberbtn" min="-2" pref="115" max="-2" attributes="0"/>
+              <Component id="btnAnggota" min="-2" pref="115" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-              <Component id="Logbtn" min="-2" pref="185" max="-2" attributes="0"/>
+              <Component id="btnLogBook" min="-2" pref="185" max="-2" attributes="0"/>
               <EmptySpace pref="99" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -47,15 +47,15 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="234" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="Rentbtn" max="32767" attributes="0"/>
-                  <Component id="Bukubtn" max="32767" attributes="0"/>
+                  <Component id="btnPeminjaman" max="32767" attributes="0"/>
+                  <Component id="btnBuku" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="Returnbtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="Logbtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="Employeebtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="Memberbtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnPengembalian" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnLogBook" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnPetugas" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnAnggota" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="329" max="32767" attributes="0"/>
           </Group>
@@ -63,49 +63,49 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="Memberbtn">
+    <Component class="javax.swing.JButton" name="btnAnggota">
       <Properties>
         <Property name="text" type="java.lang.String" value="Anggota"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MemberbtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAnggotaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="Rentbtn">
+    <Component class="javax.swing.JButton" name="btnPeminjaman">
       <Properties>
         <Property name="text" type="java.lang.String" value="Peminjaman"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RentbtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPeminjamanActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="Returnbtn">
+    <Component class="javax.swing.JButton" name="btnPengembalian">
       <Properties>
         <Property name="text" type="java.lang.String" value="Pengembalian"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ReturnbtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPengembalianActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="Bukubtn">
+    <Component class="javax.swing.JButton" name="btnBuku">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Bukiu"/>
+        <Property name="text" type="java.lang.String" value="Buku"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BukubtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBukuActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="Logbtn">
+    <Component class="javax.swing.JButton" name="btnLogBook">
       <Properties>
         <Property name="text" type="java.lang.String" value="Log Book"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="Employeebtn">
+    <Component class="javax.swing.JButton" name="btnPetugas">
       <Properties>
         <Property name="text" type="java.lang.String" value="Petugas"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EmployeebtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPetugasActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
