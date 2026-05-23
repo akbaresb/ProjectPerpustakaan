@@ -3,7 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.perpustakaan;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Font;
 import java.security.MessageDigest;
+import javax.swing.BorderFactory;
+import javax.swing.JLabel;
 /**
  *
  * @author akbar
@@ -19,7 +25,24 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         this.setLocationRelativeTo(null);
         initComponents();
-        
+         Color bgBase = new Color(30, 30, 46);
+    Color bgSurface = new Color(42, 42, 60);
+    Color textMain = new Color(205, 214, 244);
+    Color textMuted = new Color(166, 173, 200);
+    Color accentBlue = new Color(137, 180, 250);
+    Color accentGreen = new Color(166, 227, 161);
+    Color accentRed = new Color(243, 139, 168);
+    
+ 
+    username.setBackground(bgBase);
+        username.setForeground(textMain);
+        password.setBackground(bgBase);
+        password.setForeground(textMain);
+        box.setBackground(bgSurface);
+        judul.setForeground(accentBlue);
+        username.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(textMuted), "username", 0, 0, null, textMuted));
+        password.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(textMuted), "Password", 0, 0, null, textMuted));
+     
     }
   
 private String encryptPassword(String password) {
@@ -47,23 +70,17 @@ private String encryptPassword(String password) {
     private void initComponents() {
 
         jButton2 = new javax.swing.JButton();
-        DaftarBtn = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        password = new javax.swing.JPasswordField();
+        box = new javax.swing.JPanel();
         username = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        password = new javax.swing.JPasswordField();
+        loginbtn = new javax.swing.JButton();
+        closebtn = new javax.swing.JButton();
+        DaftarBtn = new javax.swing.JButton();
+        judul = new javax.swing.JLabel();
 
         jButton2.setText("jButton2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        DaftarBtn.setText("Daftar ");
-        DaftarBtn.addActionListener(this::DaftarBtnActionPerformed);
-
-        jButton3.setText("Close");
-        jButton3.addActionListener(this::jButton3ActionPerformed);
 
         password.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -71,50 +88,73 @@ private String encryptPassword(String password) {
             }
         });
 
-        jLabel1.setText("Username");
+        loginbtn.setBackground(new java.awt.Color(137, 180, 250));
+        loginbtn.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        loginbtn.setText("Login");
+        loginbtn.addActionListener(this::loginbtnActionPerformed);
 
-        jLabel2.setText("Password");
+        closebtn.setBackground(new java.awt.Color(243, 139, 168));
+        closebtn.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        closebtn.setText("Close");
+        closebtn.addActionListener(this::closebtnActionPerformed);
 
-        jButton4.setText("Login");
-        jButton4.addActionListener(this::jButton4ActionPerformed);
+        DaftarBtn.setBackground(new java.awt.Color(166, 227, 161));
+        DaftarBtn.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        DaftarBtn.setText("Register");
+        DaftarBtn.addActionListener(this::DaftarBtnActionPerformed);
+
+        judul.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
+        judul.setText("E-Perpus Login");
+
+        javax.swing.GroupLayout boxLayout = new javax.swing.GroupLayout(box);
+        box.setLayout(boxLayout);
+        boxLayout.setHorizontalGroup(
+            boxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, boxLayout.createSequentialGroup()
+                .addContainerGap(107, Short.MAX_VALUE)
+                .addComponent(judul)
+                .addGap(99, 99, 99))
+            .addGroup(boxLayout.createSequentialGroup()
+                .addGap(79, 79, 79)
+                .addGroup(boxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(password)
+                    .addGroup(boxLayout.createSequentialGroup()
+                        .addComponent(loginbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(DaftarBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE))
+                    .addComponent(username)
+                    .addComponent(closebtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        boxLayout.setVerticalGroup(
+            boxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(boxLayout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(judul)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(boxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(loginbtn)
+                    .addComponent(DaftarBtn))
+                .addGap(18, 18, 18)
+                .addComponent(closebtn)
+                .addContainerGap(67, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(username)
-                    .addComponent(password, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DaftarBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23))
+            .addComponent(box, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(jButton4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel2))
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(DaftarBtn)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addComponent(box, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -197,13 +237,13 @@ private String encryptPassword(String password) {
     }
     }//GEN-LAST:event_enter
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void loginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginbtnActionPerformed
       masuk();      // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_loginbtnActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void closebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closebtnActionPerformed
        this.dispose();        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_closebtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,11 +272,11 @@ private String encryptPassword(String password) {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton DaftarBtn;
+    private javax.swing.JPanel box;
+    private javax.swing.JButton closebtn;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel judul;
+    private javax.swing.JButton loginbtn;
     private javax.swing.JPasswordField password;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables

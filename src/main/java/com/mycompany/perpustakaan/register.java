@@ -210,7 +210,6 @@ public class register extends javax.swing.JFrame {
             
             javax.swing.JOptionPane.showMessageDialog(this, "ID Member sudah digunakan, silakan gunakan ID lain!");
             txtid.setText("");
-            txtid.requestFocus();
         } else {
           
           
