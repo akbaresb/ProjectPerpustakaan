@@ -317,28 +317,35 @@ public class Peminjaman extends javax.swing.JFrame {
     }//GEN-LAST:event_tNamaActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        try {
-        java.sql.Connection conn = (java.sql.Connection) Koneksi.configDB();
-        String sqlInsert = "INSERT INTO peminjaman (no_transaksi, id_member, id_buku, tgl_pinjam, tgl_kembali, status) VALUES (?, ?, ?, ?, ?, ?)";
-        java.sql.PreparedStatement pstInsert = conn.prepareStatement(sqlInsert);
-        pstInsert.setString(1, tNoPinjam.getText());
-        pstInsert.setString(2, tIdAnggota.getText());
-        pstInsert.setString(3, tIdBuku.getText());
-        
+ try {
+        java.sql.Connection conn = (java.sql.Connection) Koneksi.configDB(); 
         java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd");
-        pstInsert.setString(4, sdf.format(tglPinjam.getDate()));
-        pstInsert.setString(5, sdf.format(tglKembali.getDate()));
-        pstInsert.setString(6, "Pinjam"); // Status default
+        String sqlPeminjaman = "INSERT INTO peminjaman (no_transaksi, id_member, tgl_pinjam, tgl_kembali) VALUES (?, ?, ?, ?)";
+        java.sql.PreparedStatement pstPeminjaman = conn.prepareStatement(sqlPeminjaman);
         
-        pstInsert.execute(); 
+        pstPeminjaman.setString(1, tNoPinjam.getText());
+        pstPeminjaman.setString(2, tIdAnggota.getText());
+        pstPeminjaman.setString(3, sdf.format(tglPinjam.getDate()));
+        pstPeminjaman.setString(4, sdf.format(tglKembali.getDate()));
+        pstPeminjaman.execute(); 
+        String sqlDetail = "INSERT INTO detail_peminjaman (no_transaksi, id_buku, status) VALUES (?, ?, ?)";
+        java.sql.PreparedStatement pstDetail = conn.prepareStatement(sqlDetail);
+        
+        pstDetail.setString(1, tNoPinjam.getText());
+        pstDetail.setString(2, tIdBuku.getText());
+        pstDetail.setString(3, "pinjam");
+        pstDetail.execute(); 
         javax.swing.JOptionPane.showMessageDialog(null, "Peminjaman Berhasil!");
-
+        
+        kosongkanForm();
+        generateNoTransaksi();
+        
     } catch (Exception e) {
         javax.swing.JOptionPane.showMessageDialog(this, "Terjadi Kesalahan: " + e.getMessage());
     }
+      
     kosongkanForm();
-    generateNoTransaksi();  
-    // TODO add your handling code here:
+    generateNoTransaksi();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

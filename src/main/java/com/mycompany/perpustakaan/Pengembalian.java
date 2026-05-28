@@ -28,8 +28,8 @@ public class Pengembalian extends javax.swing.JFrame {
     Date hariIni = new Date();
     SimpleDateFormat formatTanggal = new SimpleDateFormat("yyyy-MM-dd"); 
     String tanggalSekarang = formatTanggal.format(hariIni);
-    tglKembali.setText(tanggalSekarang);
-    tglKembali.setEditable(false); 
+    tglKembali1.setText(tanggalSekarang);
+    tglKembali1.setEditable(false); 
 }
     private void kosongkanForm() {
     cTransaksi.removeAllItems();
@@ -65,13 +65,14 @@ public class Pengembalian extends javax.swing.JFrame {
         tNama = new javax.swing.JTextField();
         cTransaksi = new javax.swing.JComboBox<>();
         tglTenggat = new javax.swing.JTextField();
-        tglKembali = new javax.swing.JTextField();
+        tglKembali1 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblPinjam = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        dendatxt = new javax.swing.JTextField();
 
         popupMenu1.setLabel("popupMenu1");
 
@@ -83,7 +84,7 @@ public class Pengembalian extends javax.swing.JFrame {
 
         tIdAnggota.setBackground(new java.awt.Color(30, 30, 46));
         tIdAnggota.setForeground(new java.awt.Color(166, 173, 200));
-        tIdAnggota.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "USERNAME", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
+        tIdAnggota.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "USERNAME", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
         tIdAnggota.addActionListener(this::tIdAnggotaActionPerformed);
         tIdAnggota.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -95,33 +96,33 @@ public class Pengembalian extends javax.swing.JFrame {
         tNama.setBackground(new java.awt.Color(30, 30, 46));
         tNama.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         tNama.setForeground(new java.awt.Color(166, 173, 200));
-        tNama.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "NAMA ANGGOTA", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
+        tNama.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "NAMA ANGGOTA", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
         tNama.addActionListener(this::tNamaActionPerformed);
 
         cTransaksi.setBackground(new java.awt.Color(30, 30, 40));
         cTransaksi.setForeground(new java.awt.Color(166, 173, 200));
-        cTransaksi.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "TRANSAKSI", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
+        cTransaksi.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "TRANSAKSI", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
         cTransaksi.addActionListener(this::cTransaksiActionPerformed);
 
         tglTenggat.setEditable(false);
         tglTenggat.setBackground(new java.awt.Color(30, 30, 46));
         tglTenggat.setForeground(new java.awt.Color(166, 173, 200));
-        tglTenggat.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "TANGGAL TENGGAT", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
+        tglTenggat.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "TANGGAL TENGGAT", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
 
-        tglKembali.setEditable(false);
-        tglKembali.setBackground(new java.awt.Color(30, 30, 46));
-        tglKembali.setForeground(new java.awt.Color(166, 173, 200));
-        tglKembali.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "TANGGAL REFUND", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
+        tglKembali1.setEditable(false);
+        tglKembali1.setBackground(new java.awt.Color(30, 30, 46));
+        tglKembali1.setForeground(new java.awt.Color(166, 173, 200));
+        tglKembali1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "TANGGAL REFUND", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
 
         tblPinjam.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "No Transaksi", "Nama", "Buku", "Tanggal Pinjam", "Tanggal Kembali"
+
             }
         ));
         tblPinjam.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -151,6 +152,11 @@ public class Pengembalian extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(137, 180, 250));
         jLabel4.setText("REFUND BOOK");
 
+        dendatxt.setEditable(false);
+        dendatxt.setBackground(new java.awt.Color(30, 30, 46));
+        dendatxt.setForeground(new java.awt.Color(166, 173, 200));
+        dendatxt.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "DENDA", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -167,7 +173,8 @@ public class Pengembalian extends javax.swing.JFrame {
                             .addComponent(tNama, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cTransaksi, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tglTenggat, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tglKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tglKembali1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dendatxt, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(19, 19, 19)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -189,6 +196,16 @@ public class Pengembalian extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24)
+                        .addComponent(jButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton4))
+                        .addGap(33, 33, 33))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(tIdAnggota, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(12, 12, 12)
                         .addComponent(tNama, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -197,17 +214,10 @@ public class Pengembalian extends javax.swing.JFrame {
                         .addGap(14, 14, 14)
                         .addComponent(tglTenggat, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(15, 15, 15)
-                        .addComponent(tglKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24)
-                        .addComponent(jButton3)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4))
-                .addGap(33, 33, 33))
+                        .addComponent(tglKembali1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(dendatxt, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -230,34 +240,36 @@ public class Pengembalian extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
     String noTransaksi = cTransaksi.getSelectedItem().toString();
-    String tKembali = tglKembali.getText();
+    String tKembali = tglKembali1.getText();
+    String denda = dendatxt.getText();
     if(noTransaksi.equals("") || noTransaksi.equals("- Pilih -")) {
         JOptionPane.showMessageDialog(this, "Silakan pilih No Transaksi terlebih dahulu!");
         return;
     }
-
+    int Denda = 0;
+     Denda = Integer.parseInt(denda.trim());
+   
+    
     try {
         java.sql.Connection conn = (java.sql.Connection) Koneksi.configDB();
+        String sqlKembali = "UPDATE detail_peminjaman SET tgl_dikembalikan = ?, status = 'kembali', denda = ? WHERE no_transaksi = ?";
         
-        
-        String sqlkembali = "UPDATE peminjaman SET tgl_dikembalikan = ?, status = 'kembali' WHERE no_transaksi = ?";
-        
-        PreparedStatement pstkembali = conn.prepareStatement(sqlkembali);
-        pstkembali.setString(1, tKembali);
-        pstkembali.setString(2, noTransaksi);
-        
-        // Eksekusi query
-        int update = pstkembali.executeUpdate();
+        java.sql.PreparedStatement pstKembali = conn.prepareStatement(sqlKembali);
+        pstKembali.setString(1, tKembali);
+        pstKembali.setInt(2, Denda);
+        pstKembali.setString(3, noTransaksi);
+        int update = pstKembali.executeUpdate();
         
         if(update > 0) {
-            JOptionPane.showMessageDialog(this, "Buku berhasil dikembalikan!");
-            
+            javax.swing.JOptionPane.showMessageDialog(this, "Buku berhasil dikembalikan!");
+           
         } else {
-            JOptionPane.showMessageDialog(this, "Gagal mengembalikan buku. Transaksi tidak ditemukan.");
+            javax.swing.JOptionPane.showMessageDialog(this, "Gagal mengembalikan buku. Transaksi tidak ditemukan.");
         }
         
     } catch (Exception e) {
-        JOptionPane.showMessageDialog(this, "Terjadi kesalahan: " + e.getMessage());
+        javax.swing.JOptionPane.showMessageDialog(this, "Terjadi kesalahan: " + e.getMessage());
+        e.printStackTrace(); // Tampilkan detail error di terminal/output NetBeans untuk debugging
     }
     
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -291,7 +303,11 @@ public class Pengembalian extends javax.swing.JFrame {
         }
         
         
-        String sql = "SELECT no_transaksi, id_buku FROM peminjaman WHERE id_member = ? AND status = 'Pinjam'";
+       // String sql = "SELECT no_transaksi FROM peminjaman WHERE id_member = ? AND status = 'Pinjam'";
+        String sql = "SELECT DISTINCT p.no_transaksi "
+           + "FROM peminjaman p "
+           + "JOIN detail_peminjaman dp ON p.no_transaksi = dp.no_transaksi "
+           + "WHERE p.id_member = ? AND dp.status = 'pinjam'";
         java.sql.PreparedStatement pst = conn.prepareStatement(sql);
         pst.setString(1, idAnggota);
         
@@ -324,19 +340,24 @@ public class Pengembalian extends javax.swing.JFrame {
 
     javax.swing.table.DefaultTableModel model = new javax.swing.table.DefaultTableModel();
     model.addColumn("No Transaksi");
-    model.addColumn("Nama");
-    model.addColumn("Buku"); 
+    model.addColumn("Username");
+    model.addColumn("Nama"); 
+    model.addColumn("ID Buku");
+    model.addColumn("Nama Buku");
     model.addColumn("Tanggal Pinjam");
-    model.addColumn("Tanggal Kembali");
+    model.addColumn("Tanggal Tenggat");
 
     try {
         java.sql.Connection conn = (java.sql.Connection) Koneksi.configDB();
 
-        String sql = "SELECT p.no_transaksi, a.nama, b.judul, p.tgl_pinjam, p.tgl_kembali " +
-                     "FROM peminjaman p " +
-                     "JOIN anggota a ON p.id_member = a.id_member " + 
-                     "JOIN buku b ON p.id_buku = b.id_buku " +
-                     "WHERE p.no_transaksi = ?";
+        String sql = "SELECT p.no_transaksi, a.id_member AS username, a.nama AS nama_anggota, "
+               + "b.id_buku, b.judul AS nama_buku, p.tgl_pinjam, p.tgl_kembali AS tanggal_tenggat "
+               + "FROM peminjaman p "
+               + "JOIN anggota a ON p.id_member = a.id_member "
+               + "JOIN detail_peminjaman dp ON p.no_transaksi = dp.no_transaksi "
+               + "JOIN buku b ON dp.id_buku = b.id_buku "
+               + "WHERE p.no_transaksi = ? AND dp.status = 'pinjam'";
+                
                      
         java.sql.PreparedStatement pstkembali = conn.prepareStatement(sql);
         pstkembali.setString(1, noTransaksi);
@@ -345,13 +366,15 @@ public class Pengembalian extends javax.swing.JFrame {
         if (rs.next()) {
             model.addRow(new Object[]{
                 rs.getString("no_transaksi"),
-                rs.getString("nama"),
-                rs.getString("judul"),
+                rs.getString("username"),
+                rs.getString("nama_anggota"),
+                rs.getString("id_buku"),
+                rs.getString("nama_buku"),
                 rs.getString("tgl_pinjam"),
-                rs.getString("tgl_kembali")
+                rs.getString("tanggal_tenggat")
             });
             
-            tglTenggat.setText(rs.getString("tgl_kembali")); 
+            tglTenggat.setText(rs.getString("tanggal_tenggat")); 
         }
 
         tblPinjam.setModel(model);
@@ -359,6 +382,18 @@ public class Pengembalian extends javax.swing.JFrame {
     } catch (Exception e) {
         javax.swing.JOptionPane.showMessageDialog(this, "Error memuat detail transaksi: " + e.getMessage());
     }     // TODO add your handling code here:
+    String stringTenggat = tglTenggat.getText();
+    String stringKembali = tglKembali1.getText();
+    java.time.LocalDate dateTenggat = java.time.LocalDate.parse(stringTenggat);
+    java.time.LocalDate dateKembali = java.time.LocalDate.parse(stringKembali);
+    long selisihHari = java.time.temporal.ChronoUnit.DAYS.between(dateTenggat, dateKembali);
+    
+    long totalDenda = 0;
+    if (selisihHari > 0) {
+        totalDenda = selisihHari * 10000;
+    }
+    dendatxt.setText(String.valueOf(totalDenda));
+   // TODO add your handling code here:
     }//GEN-LAST:event_cTransaksiActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -401,6 +436,7 @@ public class Pengembalian extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cTransaksi;
+    private javax.swing.JTextField dendatxt;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -411,7 +447,7 @@ public class Pengembalian extends javax.swing.JFrame {
     private javax.swing.JTextField tIdAnggota;
     private javax.swing.JTextField tNama;
     private javax.swing.JTable tblPinjam;
-    private javax.swing.JTextField tglKembali;
+    private javax.swing.JTextField tglKembali1;
     private javax.swing.JTextField tglTenggat;
     // End of variables declaration//GEN-END:variables
 }
