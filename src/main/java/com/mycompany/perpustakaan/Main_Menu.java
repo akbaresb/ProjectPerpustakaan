@@ -19,7 +19,7 @@ public class Main_Menu extends javax.swing.JFrame {
         btnPengembalian.setVisible(false);
         btnPetugas.setVisible(false);
         btnAnggota.setVisible(false);
-        btnLogBook.setVisible(false);
+        ReportBtn.setVisible(false);
 
         if (role.equalsIgnoreCase("inventaris")) {
             btnBuku.setVisible(true);
@@ -27,7 +27,7 @@ public class Main_Menu extends javax.swing.JFrame {
         } else if (role.equalsIgnoreCase("resepsionis")) {
             btnPeminjaman.setVisible(true);
             btnPengembalian.setVisible(true);
-            btnLogBook.setVisible(true);
+            ReportBtn.setVisible(true);
             
         } else if (role.equalsIgnoreCase("member")) {
             btnPeminjaman.setVisible(true);
@@ -39,7 +39,7 @@ public class Main_Menu extends javax.swing.JFrame {
             btnPengembalian.setVisible(true);
             btnPetugas.setVisible(true);
             btnAnggota.setVisible(true);
-            btnLogBook.setVisible(true);
+            ReportBtn.setVisible(true);
         }
     }
     /**
@@ -61,8 +61,9 @@ public class Main_Menu extends javax.swing.JFrame {
         btnPeminjaman = new javax.swing.JButton();
         btnPengembalian = new javax.swing.JButton();
         btnBuku = new javax.swing.JButton();
-        btnLogBook = new javax.swing.JButton();
+        ReportBtn = new javax.swing.JButton();
         btnPetugas = new javax.swing.JButton();
+        btnLogBook1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -83,12 +84,16 @@ public class Main_Menu extends javax.swing.JFrame {
         btnBuku.addActionListener(this::btnBukuActionPerformed);
         getContentPane().add(btnBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, 137, 70));
 
-        btnLogBook.setText("Log Book");
-        getContentPane().add(btnLogBook, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, 140, 60));
+        ReportBtn.setText("Report");
+        ReportBtn.addActionListener(this::ReportBtnActionPerformed);
+        getContentPane().add(ReportBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 90, 140, 70));
 
         btnPetugas.setText("Petugas");
         btnPetugas.addActionListener(this::btnPetugasActionPerformed);
         getContentPane().add(btnPetugas, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, 140, 60));
+
+        btnLogBook1.setText("Log Book");
+        getContentPane().add(btnLogBook1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, 140, 60));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -137,6 +142,10 @@ Member formMember = new Member();
     this.dispose();         // TODO add your handling code here:
     }//GEN-LAST:event_btnPeminjamanActionPerformed
 
+    private void ReportBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReportBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ReportBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -163,9 +172,10 @@ Member formMember = new Member();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ReportBtn;
     private javax.swing.JButton btnAnggota;
     private javax.swing.JButton btnBuku;
-    private javax.swing.JButton btnLogBook;
+    private javax.swing.JButton btnLogBook1;
     private javax.swing.JButton btnPeminjaman;
     private javax.swing.JButton btnPengembalian;
     private javax.swing.JButton btnPetugas;
