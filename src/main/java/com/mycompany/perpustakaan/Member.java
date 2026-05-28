@@ -90,65 +90,56 @@ public class Member extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        SubmitBtn = new javax.swing.JButton();
-        clear = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        txtpassword = new javax.swing.JPasswordField();
+        txttelepon = new javax.swing.JTextField();
+        txtemail = new javax.swing.JTextField();
+        txtnama = new javax.swing.JTextField();
+        txtid = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtalamat = new javax.swing.JTextArea();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabelMember = new javax.swing.JTable();
         closeBtn = new javax.swing.JButton();
         UpdateBtn = new javax.swing.JButton();
         DelBtn = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        txtid = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tabelMember = new javax.swing.JTable();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        txtalamat = new javax.swing.JTextArea();
-        txtpassword = new javax.swing.JPasswordField();
-        jLabel6 = new javax.swing.JLabel();
-        txttelepon = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
-        txtemail = new javax.swing.JTextField();
-        txtnama = new javax.swing.JTextField();
+        SubmitBtn = new javax.swing.JButton();
+        clear = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        SubmitBtn.setText("Submit");
-        SubmitBtn.addActionListener(this::SubmitBtnActionPerformed);
-        getContentPane().add(SubmitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 48, 146, -1));
+        jPanel2.setBackground(new java.awt.Color(30, 30, 46));
 
-        clear.setText("Clear");
-        clear.addActionListener(this::clearActionPerformed);
-        getContentPane().add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 171, 146, -1));
+        txtpassword.setBackground(new java.awt.Color(30, 30, 46));
+        txtpassword.setForeground(new java.awt.Color(166, 173, 200));
+        txtpassword.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(205, 214, 244), 2), "PASSWORD", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
 
-        closeBtn.setText("Close");
-        closeBtn.addActionListener(this::closeBtnActionPerformed);
-        getContentPane().add(closeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 201, 146, -1));
+        txttelepon.setBackground(new java.awt.Color(30, 30, 46));
+        txttelepon.setForeground(new java.awt.Color(166, 173, 200));
+        txttelepon.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(205, 214, 244), 2), "NOMOR TELEPON", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
 
-        UpdateBtn.setText("Update");
-        UpdateBtn.addActionListener(this::UpdateBtnActionPerformed);
-        getContentPane().add(UpdateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 90, 146, -1));
+        txtemail.setBackground(new java.awt.Color(30, 30, 46));
+        txtemail.setForeground(new java.awt.Color(166, 173, 200));
+        txtemail.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(205, 214, 244), 2), "EMAIL", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
 
-        DelBtn.setText("Delete");
-        DelBtn.addActionListener(this::DelBtnActionPerformed);
-        getContentPane().add(DelBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 129, 146, -1));
-
-        jLabel3.setText("Email");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 132, -1, -1));
-
-        jLabel4.setText("Nomor Telpon");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 174, -1, -1));
-
-        jLabel5.setText("Alamat");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 204, -1, -1));
+        txtnama.setBackground(new java.awt.Color(30, 30, 46));
+        txtnama.setForeground(new java.awt.Color(166, 173, 200));
+        txtnama.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(205, 214, 244), 2), "NAMA", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
 
         txtid.setBackground(new java.awt.Color(30, 30, 46));
         txtid.setForeground(new java.awt.Color(205, 214, 244));
-        txtid.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "USERNAME", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
+        txtid.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(205, 214, 244), 2), "USERNAME", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
         txtid.setMinimumSize(new java.awt.Dimension(64, 55));
         txtid.setPreferredSize(new java.awt.Dimension(64, 55));
         txtid.addActionListener(this::txtidActionPerformed);
-        getContentPane().add(txtid, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 22, 240, 60));
+
+        txtalamat.setBackground(new java.awt.Color(30, 30, 46));
+        txtalamat.setColumns(20);
+        txtalamat.setForeground(new java.awt.Color(166, 173, 200));
+        txtalamat.setRows(5);
+        txtalamat.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(205, 214, 244), 2), "ALAMAT", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
+        jScrollPane2.setViewportView(txtalamat);
 
         tabelMember.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -168,43 +159,113 @@ public class Member extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tabelMember);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 315, 735, -1));
+        closeBtn.setBackground(new java.awt.Color(243, 139, 168));
+        closeBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        closeBtn.setText("Close");
+        closeBtn.addActionListener(this::closeBtnActionPerformed);
 
-        txtalamat.setColumns(20);
-        txtalamat.setRows(5);
-        jScrollPane2.setViewportView(txtalamat);
+        UpdateBtn.setBackground(new java.awt.Color(137, 180, 250));
+        UpdateBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        UpdateBtn.setText("Update");
+        UpdateBtn.addActionListener(this::UpdateBtnActionPerformed);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 201, 401, 64));
-        getContentPane().add(txtpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 271, 401, -1));
+        DelBtn.setBackground(new java.awt.Color(243, 139, 168));
+        DelBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        DelBtn.setText("Delete");
+        DelBtn.addActionListener(this::DelBtnActionPerformed);
 
-        jLabel6.setText("Password");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 274, -1, -1));
-        getContentPane().add(txttelepon, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 171, 401, -1));
+        SubmitBtn.setBackground(new java.awt.Color(166, 227, 161));
+        SubmitBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        SubmitBtn.setText("Submit");
+        SubmitBtn.addActionListener(this::SubmitBtnActionPerformed);
 
-        jPanel1.setBackground(new java.awt.Color(42, 42, 60));
+        clear.setBackground(new java.awt.Color(137, 180, 250));
+        clear.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        clear.setText("Clear");
+        clear.addActionListener(this::clearActionPerformed);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(498, 498, 498)
-                .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(190, 190, 190)
-                .addComponent(txtnama, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+        jLabel1.setBackground(new java.awt.Color(137, 180, 250));
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(137, 180, 250));
+        jLabel1.setText("MEMBER");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(UpdateBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(SubmitBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(clear, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(DelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(closeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txtnama, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txttelepon, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 715, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(413, 413, 413)
+                        .addComponent(jLabel1)))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(5, 5, 5)
-                .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(76, 76, 76)
-                .addComponent(txtnama, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1)
+                        .addGap(41, 41, 41)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addGap(122, 122, 122)
+                        .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtnama, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txttelepon, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(SubmitBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(UpdateBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(clear)
+                    .addComponent(DelBtn))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(closeBtn)
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 780));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -382,11 +443,8 @@ public class Member extends javax.swing.JFrame {
     private javax.swing.JButton UpdateBtn;
     private javax.swing.JButton clear;
     private javax.swing.JButton closeBtn;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tabelMember;

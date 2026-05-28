@@ -87,45 +87,39 @@ public class Petugas extends javax.swing.JFrame {
         email = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelPetugas = new javax.swing.JTable();
+        jLabel6 = new javax.swing.JLabel();
         SubmitBtn = new javax.swing.JButton();
         updateBtn = new javax.swing.JButton();
         delBtn = new javax.swing.JButton();
         clearbtn = new javax.swing.JButton();
         closebtn = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(30, 30, 46));
 
         jPanel1.setBackground(new java.awt.Color(30, 30, 46));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         idPetugas.setBackground(new java.awt.Color(30, 30, 46));
         idPetugas.setForeground(new java.awt.Color(166, 173, 200));
-        idPetugas.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ID PETUGAS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
+        idPetugas.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(205, 214, 244), 2), "ID PETUGAS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
         idPetugas.addActionListener(this::idPetugasActionPerformed);
-        jPanel1.add(idPetugas, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 74, 217, 55));
 
         nama.setBackground(new java.awt.Color(30, 30, 46));
         nama.setForeground(new java.awt.Color(166, 173, 200));
-        nama.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "NAMA", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
-        jPanel1.add(nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 135, 217, 54));
+        nama.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(205, 214, 244), 2), "NAMA", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
 
         jabatan.setBackground(new java.awt.Color(30, 30, 46));
         jabatan.setForeground(new java.awt.Color(166, 173, 200));
-        jabatan.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "JABATAN", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
+        jabatan.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(205, 214, 244), 2), "JABATAN", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
         jabatan.addActionListener(this::jabatanActionPerformed);
-        jPanel1.add(jabatan, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 195, 217, 55));
 
         password.setBackground(new java.awt.Color(30, 30, 46));
         password.setForeground(new java.awt.Color(166, 173, 200));
-        password.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "PASSWORD", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
-        jPanel1.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 256, 217, 55));
+        password.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(205, 214, 244), 2), "PASSWORD", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
 
         email.setBackground(new java.awt.Color(30, 30, 46));
         email.setForeground(new java.awt.Color(166, 173, 200));
-        email.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "EMAIL", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
-        jPanel1.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 317, 217, 55));
+        email.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(205, 214, 244), 2), "EMAIL", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
 
         tabelPetugas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -145,48 +139,104 @@ public class Petugas extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tabelPetugas);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 390, 1022, 390));
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(137, 180, 250));
+        jLabel6.setText("STAFF");
 
         SubmitBtn.setBackground(new java.awt.Color(166, 227, 161));
         SubmitBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         SubmitBtn.setText("Submit");
         SubmitBtn.addActionListener(this::SubmitBtnActionPerformed);
-        jPanel1.add(SubmitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(836, 233, 226, -1));
 
         updateBtn.setBackground(new java.awt.Color(137, 180, 250));
         updateBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         updateBtn.setText("Update");
         updateBtn.addActionListener(this::updateBtnActionPerformed);
-        jPanel1.add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(836, 261, 226, -1));
 
         delBtn.setBackground(new java.awt.Color(243, 139, 168));
         delBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         delBtn.setText("Delete");
         delBtn.addActionListener(this::delBtnActionPerformed);
-        jPanel1.add(delBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(836, 340, 107, 24));
 
         clearbtn.setBackground(new java.awt.Color(137, 180, 250));
         clearbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         clearbtn.setText("Clear");
         clearbtn.addActionListener(this::clearbtnActionPerformed);
-        jPanel1.add(clearbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(836, 289, 226, -1));
 
         closebtn.setBackground(new java.awt.Color(243, 139, 168));
         closebtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         closebtn.setText("Close");
         closebtn.addActionListener(this::closebtnActionPerformed);
-        jPanel1.add(closebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(955, 341, 107, -1));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(137, 180, 250));
-        jLabel6.setText("PETUGAS");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(467, 22, -1, -1));
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(490, 490, 490)
+                .addComponent(jLabel6)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(idPetugas, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nama, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jabatan, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 772, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(closebtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
+                                .addComponent(updateBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(SubmitBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(clearbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(delBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(18, 18, 18))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel6)
+                .addGap(40, 40, 40)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(idPetugas, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nama, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jabatan, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(SubmitBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(updateBtn)
+                .addGap(7, 7, 7)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(clearbtn)
+                    .addComponent(delBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(closebtn)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
