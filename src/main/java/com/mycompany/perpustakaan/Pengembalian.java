@@ -80,44 +80,38 @@ public class Pengembalian extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(30, 30, 46));
         jPanel2.setForeground(new java.awt.Color(166, 173, 200));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tIdAnggota.setBackground(new java.awt.Color(30, 30, 46));
         tIdAnggota.setForeground(new java.awt.Color(166, 173, 200));
-        tIdAnggota.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "USERNAME", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
+        tIdAnggota.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "USERNAME", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
         tIdAnggota.addActionListener(this::tIdAnggotaActionPerformed);
         tIdAnggota.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 tIdAnggotaKeyPressed(evt);
             }
         });
-        jPanel2.add(tIdAnggota, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 108, 241, 60));
 
         tNama.setEditable(false);
         tNama.setBackground(new java.awt.Color(30, 30, 46));
         tNama.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         tNama.setForeground(new java.awt.Color(166, 173, 200));
-        tNama.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "NAMA ANGGOTA", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
+        tNama.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "NAMA ANGGOTA", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
         tNama.addActionListener(this::tNamaActionPerformed);
-        jPanel2.add(tNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 241, 60));
 
         cTransaksi.setBackground(new java.awt.Color(30, 30, 40));
         cTransaksi.setForeground(new java.awt.Color(166, 173, 200));
-        cTransaksi.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "TRANSAKSI", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
+        cTransaksi.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "TRANSAKSI", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
         cTransaksi.addActionListener(this::cTransaksiActionPerformed);
-        jPanel2.add(cTransaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 252, 241, 64));
 
         tglTenggat.setEditable(false);
         tglTenggat.setBackground(new java.awt.Color(30, 30, 46));
         tglTenggat.setForeground(new java.awt.Color(166, 173, 200));
-        tglTenggat.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "TANGGAL TENGGAT", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
-        jPanel2.add(tglTenggat, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 668, 241, 55));
+        tglTenggat.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "TANGGAL TENGGAT", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
 
         tglKembali.setEditable(false);
         tglKembali.setBackground(new java.awt.Color(30, 30, 46));
         tglKembali.setForeground(new java.awt.Color(166, 173, 200));
-        tglKembali.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "TANGGAL REFUND", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
-        jPanel2.add(tglKembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(378, 668, 241, 55));
+        tglKembali.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "TANGGAL REFUND", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
 
         tblPinjam.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -137,30 +131,84 @@ public class Pengembalian extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblPinjam);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 334, 950, 316));
-
         jButton4.setBackground(new java.awt.Color(243, 139, 168));
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton4.setText("Close");
         jButton4.addActionListener(this::jButton4ActionPerformed);
-        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 709, 138, -1));
 
         jButton2.setBackground(new java.awt.Color(243, 139, 168));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton2.setText("Batal");
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(738, 709, 138, -1));
+        jButton2.addActionListener(this::jButton2ActionPerformed);
 
         jButton3.setBackground(new java.awt.Color(166, 227, 161));
         jButton3.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jButton3.setText("Kembalikan");
         jButton3.addActionListener(this::jButton3ActionPerformed);
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(738, 668, 282, -1));
 
         jLabel4.setBackground(new java.awt.Color(137, 180, 250));
         jLabel4.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(137, 180, 250));
         jLabel4.setText("REFUND BOOK");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 43, -1, -1));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(376, 376, 376)
+                        .addComponent(jLabel4))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tIdAnggota, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tNama, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cTransaksi, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tglTenggat, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tglKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(19, 19, 19)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(432, 432, 432)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                .addContainerGap(34, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(tIdAnggota, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(tNama, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(cTransaksi, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14)
+                        .addComponent(tglTenggat, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15)
+                        .addComponent(tglKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24)
+                        .addComponent(jButton3)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton4))
+                .addGap(33, 33, 33))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -170,7 +218,7 @@ public class Pengembalian extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -321,6 +369,10 @@ public class Pengembalian extends javax.swing.JFrame {
     menu.setLocationRelativeTo(null);
     this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
