@@ -52,17 +52,18 @@ private void tampilkanLaporan(String namaFileJasper) {
     private void initComponents() {
 
         jComboBox1 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        viewbtn = new javax.swing.JButton();
+        closebtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Laporan Stok Buku", "Laporan Member", "Laporan Peminjaman yang Belum Kembali", "Laporan Member Paling Sering Pinjam", "Laporan Buku Paling Sering Dipinjam" }));
 
-        jButton1.setText("View");
-        jButton1.addActionListener(this::jButton1ActionPerformed);
+        viewbtn.setText("View");
+        viewbtn.addActionListener(this::viewbtnActionPerformed);
 
-        jButton2.setText("Close");
+        closebtn.setText("Close");
+        closebtn.addActionListener(this::closebtnActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -72,9 +73,9 @@ private void tampilkanLaporan(String namaFileJasper) {
                 .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(viewbtn)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2))
+                        .addComponent(closebtn))
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(80, Short.MAX_VALUE))
         );
@@ -85,15 +86,15 @@ private void tampilkanLaporan(String namaFileJasper) {
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(viewbtn)
+                    .addComponent(closebtn))
                 .addContainerGap(159, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void viewbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewbtnActionPerformed
                                   
     String pilihanLaporan = jComboBox1.getSelectedItem().toString();
     
@@ -123,7 +124,14 @@ private void tampilkanLaporan(String namaFileJasper) {
             break;
     }
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_viewbtnActionPerformed
+
+    private void closebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closebtnActionPerformed
+     Main_Menu menu = new Main_Menu();
+    menu.setVisible(true);
+    menu.setLocationRelativeTo(null);
+    this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_closebtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -151,8 +159,8 @@ private void tampilkanLaporan(String namaFileJasper) {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton closebtn;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton viewbtn;
     // End of variables declaration//GEN-END:variables
 }
