@@ -95,14 +95,10 @@ public class Member extends javax.swing.JFrame {
         closeBtn = new javax.swing.JButton();
         UpdateBtn = new javax.swing.JButton();
         DelBtn = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txtid = new javax.swing.JTextField();
-        txtnama = new javax.swing.JTextField();
-        txtemail = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelMember = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -110,33 +106,49 @@ public class Member extends javax.swing.JFrame {
         txtpassword = new javax.swing.JPasswordField();
         jLabel6 = new javax.swing.JLabel();
         txttelepon = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        txtemail = new javax.swing.JTextField();
+        txtnama = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         SubmitBtn.setText("Submit");
         SubmitBtn.addActionListener(this::SubmitBtnActionPerformed);
+        getContentPane().add(SubmitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 48, 146, -1));
 
         clear.setText("Clear");
         clear.addActionListener(this::clearActionPerformed);
+        getContentPane().add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 171, 146, -1));
 
         closeBtn.setText("Close");
         closeBtn.addActionListener(this::closeBtnActionPerformed);
+        getContentPane().add(closeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 201, 146, -1));
 
         UpdateBtn.setText("Update");
         UpdateBtn.addActionListener(this::UpdateBtnActionPerformed);
+        getContentPane().add(UpdateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 90, 146, -1));
 
         DelBtn.setText("Delete");
         DelBtn.addActionListener(this::DelBtnActionPerformed);
-
-        jLabel1.setText("Nama");
-
-        jLabel2.setText("ID Member");
+        getContentPane().add(DelBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 129, 146, -1));
 
         jLabel3.setText("Email");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 132, -1, -1));
 
         jLabel4.setText("Nomor Telpon");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 174, -1, -1));
 
         jLabel5.setText("Alamat");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 204, -1, -1));
+
+        txtid.setBackground(new java.awt.Color(30, 30, 46));
+        txtid.setForeground(new java.awt.Color(205, 214, 244));
+        txtid.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "USERNAME", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
+        txtid.setMinimumSize(new java.awt.Dimension(64, 55));
+        txtid.setPreferredSize(new java.awt.Dimension(64, 55));
+        txtid.addActionListener(this::txtidActionPerformed);
+        getContentPane().add(txtid, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 22, 240, 60));
 
         tabelMember.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -156,86 +168,43 @@ public class Member extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tabelMember);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 315, 735, -1));
+
         txtalamat.setColumns(20);
         txtalamat.setRows(5);
         jScrollPane2.setViewportView(txtalamat);
 
-        jLabel6.setText("Password");
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 201, 401, 64));
+        getContentPane().add(txtpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 271, 401, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 735, Short.MAX_VALUE)
-                        .addGap(23, 23, 23))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtpassword)
-                            .addComponent(txtid, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
-                            .addComponent(txtnama, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
-                            .addComponent(txtemail, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
-                            .addComponent(jScrollPane2)
-                            .addComponent(txttelepon, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(DelBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(UpdateBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(closeBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(clear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(SubmitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(23, 23, 23))))
+        jLabel6.setText("Password");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 274, -1, -1));
+        getContentPane().add(txttelepon, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 171, 401, -1));
+
+        jPanel1.setBackground(new java.awt.Color(42, 42, 60));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(498, 498, 498)
+                .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(190, 190, 190)
+                .addComponent(txtnama, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(SubmitBtn))
-                    .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(UpdateBtn)
-                    .addComponent(txtnama, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(15, 15, 15)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(DelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(clear)
-                    .addComponent(jLabel4)
-                    .addComponent(txttelepon, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(closeBtn)
-                        .addComponent(jLabel5))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtpassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addGap(20, 20, 20)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(76, 76, 76)
+                .addComponent(txtnama, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 780));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -378,6 +347,10 @@ public class Member extends javax.swing.JFrame {
     }         // TODO add your handling code here:
     }//GEN-LAST:event_tabelMemberMousePressed
 
+    private void txtidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtidActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtidActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -409,12 +382,11 @@ public class Member extends javax.swing.JFrame {
     private javax.swing.JButton UpdateBtn;
     private javax.swing.JButton clear;
     private javax.swing.JButton closeBtn;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tabelMember;

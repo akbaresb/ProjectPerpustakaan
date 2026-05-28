@@ -65,58 +65,30 @@ public class Main_Menu extends javax.swing.JFrame {
         btnPetugas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnAnggota.setText("Anggota");
         btnAnggota.addActionListener(this::btnAnggotaActionPerformed);
+        getContentPane().add(btnAnggota, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 90, 140, 70));
 
         btnPeminjaman.setText("Peminjaman");
         btnPeminjaman.addActionListener(this::btnPeminjamanActionPerformed);
+        getContentPane().add(btnPeminjaman, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, 140, 60));
 
         btnPengembalian.setText("Pengembalian");
         btnPengembalian.addActionListener(this::btnPengembalianActionPerformed);
+        getContentPane().add(btnPengembalian, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 170, 140, 64));
 
         btnBuku.setText("Buku");
         btnBuku.addActionListener(this::btnBukuActionPerformed);
+        getContentPane().add(btnBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, 137, 70));
 
         btnLogBook.setText("Log Book");
+        getContentPane().add(btnLogBook, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, 140, 60));
 
         btnPetugas.setText("Petugas");
         btnPetugas.addActionListener(this::btnPetugasActionPerformed);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(142, 142, 142)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnPengembalian, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnBuku, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnPetugas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnPeminjaman, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAnggota, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(btnLogBook, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(99, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(234, 234, 234)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnPeminjaman, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnBuku, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(182, 182, 182)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnPengembalian)
-                    .addComponent(btnLogBook)
-                    .addComponent(btnPetugas)
-                    .addComponent(btnAnggota))
-                .addContainerGap(329, Short.MAX_VALUE))
-        );
+        getContentPane().add(btnPetugas, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, 140, 60));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

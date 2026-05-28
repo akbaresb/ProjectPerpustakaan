@@ -26,12 +26,12 @@ public class Login extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         initComponents();
          Color bgBase = new Color(30, 30, 46);
-    Color bgSurface = new Color(42, 42, 60);
-    Color textMain = new Color(205, 214, 244);
-    Color textMuted = new Color(166, 173, 200);
-    Color accentBlue = new Color(137, 180, 250);
-    Color accentGreen = new Color(166, 227, 161);
-    Color accentRed = new Color(243, 139, 168);
+         Color bgSurface = new Color(42, 42, 60);
+         Color textMain = new Color(205, 214, 244);
+         Color textMuted = new Color(166, 173, 200);
+         Color accentBlue = new Color(137, 180, 250);
+         Color accentGreen = new Color(166, 227, 161);
+         Color accentRed = new Color(243, 139, 168);
     
  
     username.setBackground(bgBase);
@@ -82,6 +82,10 @@ private String encryptPassword(String password) {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        username.setMinimumSize(new java.awt.Dimension(64, 55));
+        username.setPreferredSize(new java.awt.Dimension(64, 55));
+
+        password.setPreferredSize(new java.awt.Dimension(64, 55));
         password.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 enter(evt);
@@ -117,13 +121,14 @@ private String encryptPassword(String password) {
             .addGroup(boxLayout.createSequentialGroup()
                 .addGap(79, 79, 79)
                 .addGroup(boxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(password)
-                    .addGroup(boxLayout.createSequentialGroup()
-                        .addComponent(loginbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(DaftarBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE))
-                    .addComponent(username)
-                    .addComponent(closebtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(password, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
+                    .addGroup(boxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(username, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(boxLayout.createSequentialGroup()
+                            .addComponent(loginbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(DaftarBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE))
+                        .addComponent(closebtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         boxLayout.setVerticalGroup(
@@ -132,10 +137,10 @@ private String encryptPassword(String password) {
                 .addGap(43, 43, 43)
                 .addComponent(judul)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21)
                 .addGroup(boxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(loginbtn)
                     .addComponent(DaftarBtn))

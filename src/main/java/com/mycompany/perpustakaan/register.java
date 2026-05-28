@@ -80,136 +80,79 @@ public class register extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(30, 30, 46));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtalamat.setBackground(new java.awt.Color(30, 30, 46));
         txtalamat.setColumns(20);
         txtalamat.setRows(5);
-        txtalamat.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ALAMAT", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
+        txtalamat.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ALAMAT", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
         jScrollPane2.setViewportView(txtalamat);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, 360, 130));
 
         txtpassword.setBackground(new java.awt.Color(30, 30, 46));
         txtpassword.setForeground(new java.awt.Color(166, 173, 200));
-        txtpassword.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "PASSWORD", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
+        txtpassword.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "PASSWORD", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
+        jPanel1.add(txtpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, 238, 55));
 
         txttelepon.setBackground(new java.awt.Color(30, 30, 46));
         txttelepon.setForeground(new java.awt.Color(166, 173, 200));
-        txttelepon.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "NOMOR TELEPON", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
+        txttelepon.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "NOMOR TELEPON", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
+        jPanel1.add(txttelepon, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 200, 238, 55));
 
         confirmpass.setBackground(new java.awt.Color(30, 30, 46));
         confirmpass.setForeground(new java.awt.Color(166, 173, 200));
-        confirmpass.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CONFIRM PASSWORD", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
+        confirmpass.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CONFIRM PASSWORD", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
+        jPanel1.add(confirmpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 238, 55));
 
         txtid.setBackground(new java.awt.Color(30, 30, 46));
         txtid.setForeground(new java.awt.Color(166, 173, 200));
-        txtid.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "USERNAME", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
+        txtid.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "USERNAME", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
         txtid.addActionListener(this::txtidActionPerformed);
+        jPanel1.add(txtid, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 238, 55));
 
         txtnama.setBackground(new java.awt.Color(30, 30, 46));
         txtnama.setForeground(new java.awt.Color(166, 173, 200));
-        txtnama.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "NAMA", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
+        txtnama.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "NAMA", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
+        jPanel1.add(txtnama, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 238, 55));
 
         txtemail.setBackground(new java.awt.Color(30, 30, 46));
         txtemail.setForeground(new java.awt.Color(166, 173, 200));
-        txtemail.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "EMAIL", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
+        txtemail.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "EMAIL", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
+        jPanel1.add(txtemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 130, 238, 55));
 
         SubmitBtn.setBackground(new java.awt.Color(166, 227, 161));
         SubmitBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         SubmitBtn.setText("Submit");
         SubmitBtn.addActionListener(this::SubmitBtnActionPerformed);
+        jPanel1.add(SubmitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, 147, -1));
 
         closeBtn.setBackground(new java.awt.Color(243, 139, 168));
         closeBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         closeBtn.setText("Close");
         closeBtn.addActionListener(this::closeBtnActionPerformed);
+        jPanel1.add(closeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 460, 140, -1));
 
         jLabel8.setBackground(new java.awt.Color(137, 180, 250));
         jLabel8.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(137, 180, 250));
         jLabel8.setText("REGISTER");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(399, 38, -1, -1));
 
         jLabel1.setBackground(new java.awt.Color(137, 180, 250));
         jLabel1.setForeground(new java.awt.Color(137, 180, 250));
         jLabel1.setText("SILAHKAN LENGKAPI FORM PENDAFTARAN DI BAWAH INI");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(375, 375, 375)
-                        .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(399, 399, 399)
-                        .addComponent(jLabel8))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(329, 329, 329)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(375, 375, 375)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtnama, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txttelepon, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(375, 375, 375)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(375, 375, 375)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(confirmpass, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(376, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(SubmitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(450, 450, 450))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(closeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66))))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtnama, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txttelepon, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
-                .addComponent(txtpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(confirmpass, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addComponent(SubmitBtn)
-                .addGap(18, 18, 18)
-                .addComponent(closeBtn)
-                .addContainerGap(33, Short.MAX_VALUE))
-        );
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(329, 94, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1111, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 694, Short.MAX_VALUE)
         );
 
         pack();
