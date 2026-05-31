@@ -32,6 +32,7 @@ public class Login extends javax.swing.JFrame {
          Color accentBlue = new Color(137, 180, 250);
          Color accentGreen = new Color(166, 227, 161);
          Color accentRed = new Color(243, 139, 168);
+         this.setLocationRelativeTo(null);
     
  
     username.setBackground(bgBase);

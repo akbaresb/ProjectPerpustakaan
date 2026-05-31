@@ -23,6 +23,14 @@ public class Main_Menu extends javax.swing.JFrame {
 
         if (role.equalsIgnoreCase("inventaris")) {
             btnBuku.setVisible(true);
+            java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+            // Ganti jPanel1 dengan nama background/panel Anda
+            int x = (jPanel1.getWidth() - btnBuku.getWidth()) / 2;
+            int y = (jPanel1.getHeight() - btnBuku.getHeight()) / 2;
+            btnBuku.setLocation(x, y);
+        }
+    });
             
         } else if (role.equalsIgnoreCase("resepsionis")) {
             btnPeminjaman.setVisible(true);
@@ -51,63 +59,94 @@ public class Main_Menu extends javax.swing.JFrame {
         initComponents();
         String roleAktif = userSession.getRole();
         aturTombolBerdasarkanRole(roleAktif);
+        this.setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnAnggota = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         btnPeminjaman = new javax.swing.JButton();
         btnPengembalian = new javax.swing.JButton();
         btnBuku = new javax.swing.JButton();
-        ReportBtn = new javax.swing.JButton();
         btnPetugas = new javax.swing.JButton();
-        btnLogBook1 = new javax.swing.JButton();
+        btnAnggota = new javax.swing.JButton();
+        ReportBtn = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        logoutbtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnAnggota.setText("Anggota");
-        btnAnggota.addActionListener(this::btnAnggotaActionPerformed);
-        getContentPane().add(btnAnggota, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 90, 140, 70));
+        jPanel1.setBackground(new java.awt.Color(42, 42, 60));
+        jPanel1.setLayout(null);
 
+        btnPeminjaman.setBackground(new java.awt.Color(166, 227, 161));
         btnPeminjaman.setText("Peminjaman");
         btnPeminjaman.addActionListener(this::btnPeminjamanActionPerformed);
-        getContentPane().add(btnPeminjaman, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, 140, 60));
+        jPanel1.add(btnPeminjaman);
+        btnPeminjaman.setBounds(110, 80, 137, 60);
 
+        btnPengembalian.setBackground(new java.awt.Color(166, 227, 161));
         btnPengembalian.setText("Pengembalian");
         btnPengembalian.addActionListener(this::btnPengembalianActionPerformed);
-        getContentPane().add(btnPengembalian, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 170, 140, 64));
+        jPanel1.add(btnPengembalian);
+        btnPengembalian.setBounds(280, 80, 137, 64);
 
+        btnBuku.setBackground(new java.awt.Color(166, 227, 161));
         btnBuku.setText("Buku");
+        btnBuku.setMaximumSize(new java.awt.Dimension(83, 24));
+        btnBuku.setMinimumSize(new java.awt.Dimension(83, 24));
+        btnBuku.setPreferredSize(new java.awt.Dimension(83, 24));
         btnBuku.addActionListener(this::btnBukuActionPerformed);
-        getContentPane().add(btnBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, 137, 70));
+        jPanel1.add(btnBuku);
+        btnBuku.setBounds(280, 160, 137, 60);
 
+        btnPetugas.setBackground(new java.awt.Color(166, 227, 161));
+        btnPetugas.setText("Petugas");
+        btnPetugas.setMaximumSize(new java.awt.Dimension(83, 24));
+        btnPetugas.setMinimumSize(new java.awt.Dimension(83, 24));
+        btnPetugas.setPreferredSize(new java.awt.Dimension(83, 24));
+        btnPetugas.addActionListener(this::btnPetugasActionPerformed);
+        jPanel1.add(btnPetugas);
+        btnPetugas.setBounds(280, 240, 137, 60);
+
+        btnAnggota.setBackground(new java.awt.Color(166, 227, 161));
+        btnAnggota.setText("Anggota");
+        btnAnggota.addActionListener(this::btnAnggotaActionPerformed);
+        jPanel1.add(btnAnggota);
+        btnAnggota.setBounds(110, 240, 137, 60);
+
+        ReportBtn.setBackground(new java.awt.Color(166, 227, 161));
         ReportBtn.setText("Report");
         ReportBtn.addActionListener(this::ReportBtnActionPerformed);
-        getContentPane().add(ReportBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 90, 140, 70));
+        jPanel1.add(ReportBtn);
+        ReportBtn.setBounds(110, 160, 137, 60);
 
-        btnPetugas.setText("Petugas");
-        btnPetugas.addActionListener(this::btnPetugasActionPerformed);
-        getContentPane().add(btnPetugas, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, 140, 60));
+        jLabel1.setBackground(new java.awt.Color(137, 180, 250));
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(137, 180, 250));
+        jLabel1.setText("Menu");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(210, 20, 103, 50);
 
-        btnLogBook1.setText("Log Book");
-        getContentPane().add(btnLogBook1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, 140, 60));
+        logoutbtn.setBackground(new java.awt.Color(243, 139, 168));
+        logoutbtn.setText("Log Out");
+        logoutbtn.addActionListener(this::logoutbtnActionPerformed);
+        jPanel1.add(logoutbtn);
+        logoutbtn.setBounds(420, 10, 90, 30);
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 320));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAnggotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnggotaActionPerformed
-Member formMember = new Member();
+    Member formMember = new Member();
     
-   
     formMember.setVisible(true);
-    
-   
     formMember.setLocationRelativeTo(null);
-    
-    
     this.dispose(); 
     }//GEN-LAST:event_btnAnggotaActionPerformed
 
@@ -143,8 +182,19 @@ Member formMember = new Member();
     }//GEN-LAST:event_btnPeminjamanActionPerformed
 
     private void ReportBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReportBtnActionPerformed
-        // TODO add your handling code here:
+     Laporan formLaporan = new Laporan();
+     formLaporan.setVisible(true);
+     formLaporan.setLocationRelativeTo(null);
+       // TODO add your handling code here:
     }//GEN-LAST:event_ReportBtnActionPerformed
+
+    private void logoutbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutbtnActionPerformed
+
+    com.mycompany.perpustakaan.userSession.setRole(null);
+    this.dispose();
+    Login formLogin = new Login();
+    formLogin.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_logoutbtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,9 +225,11 @@ Member formMember = new Member();
     private javax.swing.JButton ReportBtn;
     private javax.swing.JButton btnAnggota;
     private javax.swing.JButton btnBuku;
-    private javax.swing.JButton btnLogBook1;
     private javax.swing.JButton btnPeminjaman;
     private javax.swing.JButton btnPengembalian;
     private javax.swing.JButton btnPetugas;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton logoutbtn;
     // End of variables declaration//GEN-END:variables
 }

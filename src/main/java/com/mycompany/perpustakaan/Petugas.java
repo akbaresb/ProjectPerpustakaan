@@ -66,8 +66,8 @@ public class Petugas extends javax.swing.JFrame {
     public Petugas() {
        
     initComponents();
-    this.setLocationRelativeTo(null);
     tampilData();
+    this.setLocationRelativeTo(null);
     }
 
     /**

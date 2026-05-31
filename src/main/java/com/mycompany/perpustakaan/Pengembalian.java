@@ -35,6 +35,10 @@ public class Pengembalian extends javax.swing.JFrame {
     cTransaksi.removeAllItems();
     tIdAnggota.setText("");
     tNama.setText("");
+    tglTenggat.setText("");
+    tglKembali1.setText("");
+    dendatxt.setText("");
+    setTanggalSekarang();
    
 }
     
@@ -47,6 +51,7 @@ public class Pengembalian extends javax.swing.JFrame {
     public Pengembalian() {
         initComponents();
         setTanggalSekarang();
+        this.setLocationRelativeTo(null);
        
     }
 
@@ -406,7 +411,7 @@ public class Pengembalian extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+      kosongkanForm();  // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

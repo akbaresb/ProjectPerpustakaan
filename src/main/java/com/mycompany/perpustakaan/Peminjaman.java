@@ -17,6 +17,8 @@ public class Peminjaman extends javax.swing.JFrame {
     tNoPinjam.setText("");
     tIdAnggota.setText("");
     tNama.setText("");
+    generateNoTransaksi();
+    
    
 }
     
@@ -103,6 +105,7 @@ public class Peminjaman extends javax.swing.JFrame {
         initComponents();
         generateNoTransaksi();
         tampilData("");
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -139,12 +142,12 @@ public class Peminjaman extends javax.swing.JFrame {
 
         tNoPinjam.setBackground(new java.awt.Color(30, 30, 46));
         tNoPinjam.setForeground(new java.awt.Color(166, 173, 200));
-        tNoPinjam.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(205, 214, 244), 2), "NO TRANSAKSI", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(205, 214, 244)), "NO TRANSAKSI", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
+        tNoPinjam.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(205, 214, 244), 2), "NO TRANSAKSI", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(205, 214, 244)), "NO TRANSAKSI", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
         tNoPinjam.addActionListener(this::tNoPinjamActionPerformed);
 
         tIdAnggota.setBackground(new java.awt.Color(30, 30, 46));
         tIdAnggota.setForeground(new java.awt.Color(166, 173, 200));
-        tIdAnggota.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(205, 214, 244), 2), "USERNAME", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
+        tIdAnggota.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(205, 214, 244), 2), "USERNAME", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
         tIdAnggota.addActionListener(this::tIdAnggotaActionPerformed);
         tIdAnggota.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -155,12 +158,12 @@ public class Peminjaman extends javax.swing.JFrame {
         tNama.setEditable(false);
         tNama.setBackground(new java.awt.Color(30, 30, 46));
         tNama.setForeground(new java.awt.Color(166, 173, 200));
-        tNama.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(205, 214, 244), 2), "NAMA", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
+        tNama.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(205, 214, 244), 2), "NAMA", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
         tNama.addActionListener(this::tNamaActionPerformed);
 
         tIdBuku.setBackground(new java.awt.Color(30, 30, 46));
         tIdBuku.setForeground(new java.awt.Color(166, 173, 200));
-        tIdBuku.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(205, 214, 244), 2), "CARI", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
+        tIdBuku.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(205, 214, 244), 2), "CARI", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
         tIdBuku.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 tIdBukuKeyPressed(evt);
@@ -171,20 +174,20 @@ public class Peminjaman extends javax.swing.JFrame {
         cCari.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         cCari.setForeground(new java.awt.Color(166, 173, 200));
         cCari.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Judul Buku", "ID Buku" }));
-        cCari.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(205, 214, 244), 2), "FILTER BY", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
+        cCari.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(205, 214, 244), 2), "FILTER BY", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
 
         tJudul.setEditable(false);
         tJudul.setBackground(new java.awt.Color(30, 30, 46));
         tJudul.setForeground(new java.awt.Color(166, 173, 200));
-        tJudul.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(205, 214, 244), 2), "JUDUL BUKU", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
+        tJudul.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(205, 214, 244), 2), "JUDUL BUKU", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
         tJudul.addActionListener(this::tJudulActionPerformed);
 
         tglPinjam.setBackground(new java.awt.Color(30, 30, 46));
-        tglPinjam.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(205, 214, 244), 2), "TANGGAL PINJAM", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
+        tglPinjam.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(205, 214, 244), 2), "TANGGAL PINJAM", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
         tglPinjam.setForeground(new java.awt.Color(166, 173, 200));
 
         tglKembali.setBackground(new java.awt.Color(30, 30, 46));
-        tglKembali.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(205, 214, 244), 2), "TANGGAL KEMBALI", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(166, 173, 200))); // NOI18N
+        tglKembali.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(205, 214, 244), 2), "TANGGAL KEMBALI", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(166, 173, 200))); // NOI18N
         tglKembali.setForeground(new java.awt.Color(166, 173, 200));
 
         jLabel8.setBackground(new java.awt.Color(137, 180, 250));
@@ -218,6 +221,7 @@ public class Peminjaman extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(243, 139, 168));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton2.setText("Batal");
+        jButton2.addActionListener(this::jButton2ActionPerformed);
 
         jButton3.setBackground(new java.awt.Color(166, 227, 161));
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -414,6 +418,10 @@ public class Peminjaman extends javax.swing.JFrame {
         javax.swing.JOptionPane.showMessageDialog(this, "Terjadi Kesalahan: " + e.getMessage());
     }         // TODO add your handling code here:
     }//GEN-LAST:event_tIdAnggotaActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    kosongkanForm();        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
